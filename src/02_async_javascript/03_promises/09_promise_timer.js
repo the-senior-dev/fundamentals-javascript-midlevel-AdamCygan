@@ -11,10 +11,12 @@ Requirements:
 // !! MAKE SURE YOU KNOW HOW TO USE new Promise() - is a common challenge in the live coding interview  !!
 
 function promiseTimer(delay) {
-    // Implement this function
-    return new Promise((resolve, reject) => {
-        // Your code here
-    });
+  // Implement this function
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('Done!');
+    }, delay);
+  });
 }
 
 module.exports = promiseTimer;
