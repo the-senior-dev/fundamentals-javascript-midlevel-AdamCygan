@@ -20,7 +20,13 @@ its callback with an error.
 // Implement your own version of it bellow(senior interview question):
 
 function promisify(nodeStyleFunction) {
-    // Implement this function
+  return function (...args) {
+    return new Promise((resolve, reject) => {
+      nodeStyleFunction.call(this, ...args, (error, result) => {
+        error ? reject(error) : resolve(result);
+      });
+    });
+  };
 }
 
 module.exports = promisify;
